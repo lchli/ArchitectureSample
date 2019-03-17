@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.lch.mvvm.viewmodel.MainViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{() -> viewmodel.changeName(nameView.getText().toString())}" />
+
+        <TextView
+            android:id="@+id/nameViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.name}" />
+
+
+        <EditText
+            android:id="@+id/ageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{() -> viewmodel.changeAge(ageView.getText().toString())}" />
+
+        <TextView
+            android:id="@+id/ageViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.age}" />
+
+
+        <EditText
+            android:id="@+id/sexView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{() -> viewmodel.changeSex(sexView.getText().toString())}" />
+
+        <TextView
+            android:id="@+id/sexViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.sex}" />
+
+    </LinearLayout>
+</layout>
